@@ -12,14 +12,13 @@ chrome.runtime.onMessage.addListener(
             "from a content script:" + sender.tab.url :
             "from the extension");
         if (request.greeting == "coords") {
-            // new x and y are request.coords.x and request.coords.y
-    		oldX = x;
-    		oldY = y;
-    		x = request.coords.x;
-    		y = request.coords.y;
-    		xDifference = x - oldX;
-    		yDifference = y - oldY;
-    		distance += Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2));
+            oldX = x;
+            oldY = y;
+            x = request.coords.x;
+            y = request.coords.y;
+            xDifference = x - oldX;
+            yDifference = y - oldY;
+            distance += Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2));
             sendResponse({farewell: "success"});
         }
 });
