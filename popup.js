@@ -27,5 +27,5 @@ document.onmousemove = function(e)
     xDifference = x - oldX;
     yDifference = y - oldY;
     distance += Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2));
-    renderStatus('distance ' + distance);
+    // renderStatus('distance ' + bgPage.distance);
 };
