@@ -5,7 +5,6 @@ function renderStatus(statusText) {
   document.getElementById('status').textContent = statusText;
 }
 
-
 document.onmousemove = function(e)
 {
     x = e.pageX;
