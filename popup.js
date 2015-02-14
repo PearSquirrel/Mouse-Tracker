@@ -1,5 +1,10 @@
 var x = 0
 var y = 0
+var xDifference = 0;
+var yDifference = 0;
+var distance = 0;
+var oldX = 0;
+var oldY = 0;
 
 var bgPage = chrome.extension.getBackgroundPage();
 
@@ -13,13 +18,14 @@ function renderStatus(statusText) {
     //document.getElementById('status').textContent = statusText;
 };
 
-/*document.onmousemove = function(e) {
+document.onmousemove = function(e)
+{
+    oldX = x;
+    oldY = y;
     x = e.pageX;
     y = e.pageY;
-    renderStatus('x:' + x + ', y:' + y);
-};*/
-
-/*chrome.runtime.sendMessage({greeting: "gimme_mah_info_brej"}, function(response) {
-    console.log(response.farewell);
-    renderStatus("distance: " + response.distance);
-});*/
+    xDifference = x - oldX;
+    yDifference = y - oldY;
+    distance += Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2));
+    renderStatus('distance ' + distance);
+};
