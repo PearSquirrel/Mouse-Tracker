@@ -11,7 +11,7 @@
   },
   "content_scripts": [
       {
-          "matches": ["http://*/*", "https://*/*"],
+          "matches": ["<all_urls>"],
           "js": ["jquery-1.11.2.js", "page_script.js"]
       }
   ],
