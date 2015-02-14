@@ -13,11 +13,6 @@
       {
           "matches": ["http://*/*", "https://*/*"],
           "js": ["jquery-1.11.2.js", "page_script.js"]
-      },
-      {
-          "matches": ["http://channingpear.com/*"],
-          "css": ["channing.css"],
-          "js": ["jquery-1.11.2.js", "channing.js"]
       }
   ],
   "background": {

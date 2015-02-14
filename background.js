@@ -6,12 +6,13 @@ var distance = 0;
 var oldX = 0;
 var oldY = 0;
 
+
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
-        if (request.greeting == "hello") {
+        if (request.greeting == "coords") {
             oldX = x;
             oldY = y;
 
@@ -25,4 +26,5 @@ chrome.runtime.onMessage.addListener(
             sendResponse({farewell: "success"});
         }
         
+
 });
