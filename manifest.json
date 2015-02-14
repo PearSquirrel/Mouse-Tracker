@@ -11,10 +11,13 @@
   },
   "content_scripts": [
       {
-          "matches": ["http://*/*"],
+          "matches": ["https://www.google.com/*"],
           "js": ["jquery-1.11.2.js", "page_script.js"]
       }
   ],
+  "background": {
+      "scripts": ["background.js"]      
+  },
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
