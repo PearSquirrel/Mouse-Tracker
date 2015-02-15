@@ -7,11 +7,8 @@ var oldX = 0;
 var oldY = 0;
 
 function loadDistance() {
-    var dist = parseInt(localStorage["distance"]);
+    var dist = parseInt(localStorage["distance"]) || 0;
     console.log(dist)
-    if (dist == undefined) {
-        dist = 0;
-    }
     return dist;
 }
 
