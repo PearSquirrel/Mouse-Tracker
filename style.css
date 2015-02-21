@@ -1,0 +1,70 @@
+body {
+  min-width: 250px;
+  margin: 0px;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 13px;
+  color: #FFF;
+  background-color: #f8f6f2;
+  background-image: url(background.png);
+background-image: linear-gradient(top, rgb(102,205,170) 120px, rgb(70,117,168) 0%);
+background-image: -o-linear-gradient(top, rgb(102,205,170) 120px, rgb(70,117,168) 0%);
+background-image: -moz-linear-gradient(top, rgb(102,205,170) 120px, rgb(70,117,168) 0%);
+background-image: -webkit-linear-gradient(top , rgb(102,205,170) 120px, rgb(70,117,168) 0%);
+background-image: -ms-linear-gradient(top, rgb(102,205,170) 120px, rgb(70,117,168) 0%);
+}
+
+#header {
+}
+
+#header h1 {
+  display: block;
+  text-align: center;
+}
+
+#wrapper {
+  width: 210px;
+  background-color: #FFF;
+  color: #000;
+  padding-bottom: 200px;
+  margin: 0 20px;
+}
+
+#menu {
+}
+
+#content {
+  clear: both;
+  padding: 10px;
+}
+
+#footer {
+}
+
+.button {
+  background-color: blue;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  border-bottom: 4px solid blue;
+}
+
+.button:hover {
+  border-bottom: 4px solid lightblue;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.half {
+  position: relative;
+  width: 50%;
+  display: inline-block;
+}

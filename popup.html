@@ -8,28 +8,25 @@
     <head>
         <title>Getting Started Extension's Popup</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <style>
-            body {
-                font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-                font-size: 100%;
-            }
-            #status {
-                /* avoid an excessively wide status text */
-                white-space: pre;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                max-width: 400px;
-                min-width:300px;
-                min-height:300px;
-            }
-        </style>
-      
         <script src="jquery-1.11.2.js"></script>
         <script src="popup.js"></script>
     </head>
   
     <body>
-        <div id="status"></div>
+	<div id="header">
+		<h1>Mouse Tracker</h1>
+	</div>
+        <div id="wrapper">
+		<div id="menu">
+			<div class="left half button">Daily</div>
+			<div class="right half button">All-Time</div>
+        	</div>
+		<div id="content">
+        		<div id="status"></div>
+		</div>
+	</div>
+	<div id="footer">
+	</div>
     </body>
 </html>
 
