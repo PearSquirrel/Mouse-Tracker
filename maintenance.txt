@@ -1,0 +1,2 @@
+To vulcanize the app (concatenate includes to play nice with chrome), install 'vulcanize' and run the following command in the root directory of the extension:
+vulcanize -o compiled.html app.html --csp
