@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/paper-elements/paper-elements.html">
+        <link rel="import" href="bower_components/core-pages/core-pages.html">
+        
         <script src="jquery-1.11.2.js"></script>
         <script src="popup.js"></script>
     </head>
@@ -21,20 +23,35 @@
             <div id="header">
 				<h1>Mouse Tracker</h1>
 			</div>
+            
 			<paper-tabs selected="0">
-  				<paper-tab>Sumanth</paper-tab>
- 				<paper-tab>Is a Boss</paper-tab>
+  				<paper-tab>Daily</paper-tab>
+ 				<paper-tab>All-Time</paper-tab>
 			</paper-tabs>
-            
-            <div id="content">
-        		<ul id="distanceList"></ul>
+
+            <core-pages flex>
                 
-            </div>
-            
-        </div>
+                <div class="tab-content" id="page-1">
+                
+                </div>
+                
+                <div class="tab-content" id="page-2">
+                    
+                    <table id="distanceTable">
+                        <tr class="distanceTableRow">
+                            <th>Units</th>
+                            <th>Distance</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+            </core-pages>
+	   </div>
         
-        <div id="footer">
-        </div>
+	   <div id="footer">
+	   </div>
+        
     </body>
 </html>
 

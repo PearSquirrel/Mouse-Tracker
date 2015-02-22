@@ -5,10 +5,18 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
-var $distanceList;
+var $distanceTable;
 
 $(document).ready(function() {
-    $distanceList = $('#distanceList');
+    
+    var pages = document.querySelector('core-pages');
+    var tabs = document.querySelector('paper-tabs');
+    tabs.addEventListener('core-select', function() {
+      pages.selected = tabs.selected;
+    });
+
+    $distanceTable = $('#distanceTable');
+    
     var conversions = convertFromPixels(bgPage.distance);
     addDistanceItem('Pixels', Math.floor(bgPage.distance));
     addDistanceItem('Inches', conversions[INCHES]);
@@ -16,8 +24,10 @@ $(document).ready(function() {
     addDistanceItem('Miles', conversions[MILES]);
 });
 
+
 function addDistanceItem(units, distance) {
-    $distanceList.append('<li class="distanceItem">' + units + ': ' + distance + '</li>');
+    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '<td/></tr>';
+    $distanceTable.append(tableAddition);
 };
 
 function convertFromPixels(pixels) {

@@ -5773,3 +5773,5 @@ Polymer('core-style', {
 
   });
 
+;
+Polymer('core-pages');
