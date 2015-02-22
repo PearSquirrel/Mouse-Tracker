@@ -21,8 +21,8 @@ $(document).ready(function() {
     
     var pixels_allTimeDistance = bgPage.allTimeDistance;
     
-    //var pixels_dailyDistance = bgPage.dailyDistance;
-    var pixels_dailyDistance = bgPage.minutelyDistance;
+    var pixels_dailyDistance = bgPage.dailyDistance;
+    //var pixels_dailyDistance = bgPage.minutelyDistance;
     
     var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
     addAllTimeDistanceItem('Pixels', Math.floor(pixels_allTimeDistance));
@@ -35,7 +35,7 @@ $(document).ready(function() {
     addDailyDistanceItem('Inches', dailyConversions[INCHES]);
     addDailyDistanceItem('Feet', dailyConversions[FEET]);
     addDailyDistanceItem('Miles', dailyConversions[MILES]);
-    $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
+    //$('#page-1').append('Current Time: ' + bgPage.currentMinutes);
 });
 
 
