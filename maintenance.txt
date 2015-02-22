@@ -1,4 +1,3 @@
 To vulcanize the app (concatenate includes to play nice with chrome), install 'vulcanize' and run the following command in the root directory of the extension:
 
-vulcanize -o compiled.html uncompiled_popup.html --csp
-mv compiled.html popup.html
+vulcanize -o compiled.html uncompiled_popup.html --csp; mv compiled.html popup.html

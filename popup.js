@@ -16,7 +16,7 @@ $(document).ready(function() {
 });
 
 function renderStatus(statusText) {
-    $('#status').text(statusText);
+    $('#page-1').text(statusText);
 };
 
 function convertFromPixels(pixels) {

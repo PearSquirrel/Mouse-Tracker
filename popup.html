@@ -748,6 +748,10 @@ in another form (e.g. a text block following the spinner).
 
 
 
+        
+
+
+
         <script src="jquery-1.11.2.js"></script>
         <script src="popup.js"></script>
     </head>
@@ -3400,21 +3404,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </template>
 
 </polymer-element>
+
+<polymer-element name="core-pages" extends="core-selector" selected="0" notap="" assetpath="bower_components/core-pages/">
+<template>
+
+  <style>/*
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+:host {
+  display: block;
+  position: relative;
+}
+
+polyfill-next-selector { content: ':host > *'; }
+::content > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1000;
+}
+
+polyfill-next-selector { content: ':host > .core-selected'; }
+::content > .core-selected {
+  visibility: visible;
+  z-index: auto;
+}</style>
+
+  <shadow></shadow>
+
+</template>
+</polymer-element>
 </div>
         <div id="wrapper">
         	<div id="header">
 				<h1>Mouse Tracker</h1>
 			</div>
 			<paper-tabs selected="0">
-  				<paper-tab>Sumanth</paper-tab>
- 				<paper-tab>Is a Boss</paper-tab>
+  				<paper-tab>Daily</paper-tab>
+ 				<paper-tab>All-Time</paper-tab>
 			</paper-tabs>
-		<div id="content">
-        		<span id="status"></span>
-		</div>
+
+            <core-pages flex="">
+                <div class="tab-content" id="page-1">Page 1</div>
+                <div class="tab-content" id="page-2">Page 2</div>
+            </core-pages>
 	</div>
 	<div id="footer">
 	</div>
+    
     
 
 

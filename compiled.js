@@ -5773,3 +5773,14 @@ Polymer('core-style', {
 
   });
 
+;
+Polymer('core-pages');;
+
+  
+    var pages = document.querySelector('core-pages');
+    var tabs = document.querySelector('paper-tabs');
+    tabs.addEventListener('core-select', function() {
+      pages.selected = tabs.selected;
+    });
+  
+    
