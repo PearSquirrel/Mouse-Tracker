@@ -2,12 +2,14 @@
 var ALL_TIME_DISTANCE = "allTimeDistance";
 
 var allTimeDistance = loadAllTimeDistance();
-var currentDate = updateCurrentDate();
-var dailyDistance = loadDailyDistance();
+var currentDate = updateCurrentDate(); 
+var dailyDistance = loadDailyDistance(); 
 
+// these minute variables are temporary
 var currentMinutes = updateCurrentTime();
 var minutelyDistance = loadMinutelyDistance();
 
+// the variables are used to calculate changes in distance based on mouse x and y coordinates
 var x = 0
 var y = 0
 var xDifference = 0;
@@ -15,6 +17,7 @@ var yDifference = 0;
 var oldX = 0;
 var oldY = 0;
 
+// returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
     var dist = parseInt(localStorage[ALL_TIME_DISTANCE]) || 0;
     console.log(dist)
@@ -27,11 +30,14 @@ function loadDailyDistance() {
     return dist;
 };
 
+// loads the distance for the current minute
 function  loadMinutelyDistance() {
     var dist = parseInt(localStorage[currentMinutes]) || 0;
     return dist;
 }
 
+// returns a string for the current date in the format: yyyy/mm/dd
+// this string is the key for the daily distance value in the local storage dictionary
 function updateCurrentDate() {
     var today = new Date();
     var dd = today.getDate();
@@ -44,10 +50,10 @@ function updateCurrentDate() {
         mm='0'+mm
     } 
     today = yyyy + '/' + mm + '/' + dd;
-    console.log(today);
     return today;
 };
 
+// returns a string for the current time in the format: yyyy/mm/dd/hh:mm
 function updateCurrentTime() {
     var time = updateCurrentDate();
     var today = new Date();
@@ -55,6 +61,7 @@ function updateCurrentTime() {
     return time;
 };
 
+// saves all the distances in their respective variables and into local storage
 function saveDistance(newDist) {
     // updates all-time distance
     allTimeDistance += newDist;
@@ -71,12 +78,9 @@ function saveDistance(newDist) {
     localStorage[currentMinutes] = minutelyDistance;
 };
 
+// listens for messages from page_script.js containing the latest coordinates for the mouse (Go MouseRat!)
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        console.log(sender.tab ?
-            "from a content script:" + sender.tab.url :
-            "from the extension");
-        
         // popup.js is requesting the coordinates of the mouse
         if (request.greeting == "coords") {
             oldX = x;
@@ -86,6 +90,7 @@ chrome.runtime.onMessage.addListener(
             xDifference = x - oldX;
             yDifference = y - oldY;
             
+            // calculates new distance using the pythagorean theorem/distance formula
             var newDist = Math.floor(Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2)));
             saveDistance(newDist);
             
