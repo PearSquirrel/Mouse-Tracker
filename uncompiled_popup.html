@@ -11,36 +11,47 @@
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/paper-elements/paper-elements.html">
         <link rel="import" href="bower_components/core-pages/core-pages.html">
+        
         <script src="jquery-1.11.2.js"></script>
         <script src="popup.js"></script>
     </head>
   
     <body>
+        
         <div id="wrapper">
-        	<div id="header">
+            
+            <div id="header">
 				<h1>Mouse Tracker</h1>
 			</div>
+            
 			<paper-tabs selected="0">
   				<paper-tab>Daily</paper-tab>
  				<paper-tab>All-Time</paper-tab>
 			</paper-tabs>
 
             <core-pages flex>
-                <div class="tab-content" id="page-1">Page 1</div>
-                <div class="tab-content" id="page-2">Page 2</div>
+                
+                <div class="tab-content" id="page-1">
+                
+                </div>
+                
+                <div class="tab-content" id="page-2">
+                    
+                    <table id="distanceTable">
+                        <tr class="distanceTableRow">
+                            <th>Units</th>
+                            <th>Distance</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
             </core-pages>
-	</div>
-	<div id="footer">
-	</div>
+	   </div>
+        
+	   <div id="footer">
+	   </div>
+        
     </body>
-    <script>
-  
-    var pages = document.querySelector('core-pages');
-    var tabs = document.querySelector('paper-tabs');
-    tabs.addEventListener('core-select', function() {
-      pages.selected = tabs.selected;
-    });
-  
-    </script>
 </html>
 

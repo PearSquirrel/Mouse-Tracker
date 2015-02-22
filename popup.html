@@ -752,6 +752,7 @@ in another form (e.g. a text block following the spinner).
 
 
 
+        
         <script src="jquery-1.11.2.js"></script>
         <script src="popup.js"></script>
     </head>
@@ -3444,23 +3445,41 @@ polyfill-next-selector { content: ':host > .core-selected'; }
 </template>
 </polymer-element>
 </div>
+        
         <div id="wrapper">
-        	<div id="header">
+            
+            <div id="header">
 				<h1>Mouse Tracker</h1>
 			</div>
+            
 			<paper-tabs selected="0">
   				<paper-tab>Daily</paper-tab>
  				<paper-tab>All-Time</paper-tab>
 			</paper-tabs>
 
             <core-pages flex="">
-                <div class="tab-content" id="page-1">Page 1</div>
-                <div class="tab-content" id="page-2">Page 2</div>
+                
+                <div class="tab-content" id="page-1">
+                
+                </div>
+                
+                <div class="tab-content" id="page-2">
+                    
+                    <table id="distanceTable">
+                        <tbody><tr class="distanceTableRow">
+                            <th>Units</th>
+                            <th>Distance</th>
+                        </tr>
+                    </tbody></table>
+                    
+                </div>
+                
             </core-pages>
-	</div>
-	<div id="footer">
-	</div>
-    
+	   </div>
+        
+	   <div id="footer">
+	   </div>
+        
     
 
 
