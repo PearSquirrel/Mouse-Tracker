@@ -7,13 +7,13 @@ var oldX = 0;
 var oldY = 0;
 
 function loadDistance() {
-    var dist = parseInt(localStorage["distance"]) || 0;
+    var dist = parseInt(localStorage["allTimeDistance"]) || 0;
     console.log(dist)
     return dist;
 }
 
 function saveDistance(dist) {
-    localStorage["distance"] = dist;
+    localStorage["allTimeDistance"] = dist;
 }
 
 chrome.runtime.onMessage.addListener(
