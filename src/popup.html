@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+    <head>
+        <title>Mouse Tracker</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/paper-elements/paper-elements.html">
+        <link rel="import" href="bower_components/core-pages/core-pages.html">
+        
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/popup.js"></script>
+    </head>
+  
+    <body>
+        
+        <div id="wrapper">
+            
+            <div id="header">
+				<h1>Mouse Tracker</h1>
+			</div>
+            
+			<paper-tabs selected="0">
+  				<paper-tab>Daily</paper-tab>
+ 				<paper-tab>All-Time</paper-tab>
+			</paper-tabs>
+
+            <core-pages flex>
+                
+                <div class="tab-content" id="page-1">
+                    
+                    <table id="dailyDistanceTable">
+                        <tr class="distanceTableRow">
+                            <th>Units</th>
+                            <th>Distance</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+                <div class="tab-content" id="page-2">
+                    
+                    <table id="allTimeDistanceTable">
+                        <tr class="distanceTableRow">
+                            <th>Units</th>
+                            <th>Distance</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+            </core-pages>
+	   </div>
+        
+	   <div id="footer">
+	   </div>
+        
+    </body>
+</html>
+
