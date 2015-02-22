@@ -5,7 +5,8 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
-var $distanceTable;
+var $allTimeDistanceTable;
+var $dailyDistanceTable;
 
 $(document).ready(function() {
     
@@ -15,19 +16,37 @@ $(document).ready(function() {
       pages.selected = tabs.selected;
     });
 
-    $distanceTable = $('#distanceTable');
+    $allTimeDistanceTable = $('#allTimeDistanceTable');
+    $dailyDistanceTable = $('#dailyDistanceTable');
     
-    var conversions = convertFromPixels(bgPage.distance);
-    addDistanceItem('Pixels', Math.floor(bgPage.distance));
-    addDistanceItem('Inches', conversions[INCHES]);
-    addDistanceItem('Feet', conversions[FEET]);
-    addDistanceItem('Miles', conversions[MILES]);
+    var pixels_allTimeDistance = bgPage.allTimeDistance;
+    
+    //var pixels_dailyDistance = bgPage.dailyDistance;
+    var pixels_dailyDistance = bgPage.minutelyDistance;
+    
+    var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
+    addAllTimeDistanceItem('Pixels', Math.floor(pixels_allTimeDistance));
+    addAllTimeDistanceItem('Inches', allTimeConversions[INCHES]);
+    addAllTimeDistanceItem('Feet', allTimeConversions[FEET]);
+    addAllTimeDistanceItem('Miles', allTimeConversions[MILES]);
+    
+    var dailyConversions = convertFromPixels(pixels_dailyDistance);
+    addDailyDistanceItem('Pixels', Math.floor(pixels_dailyDistance));
+    addDailyDistanceItem('Inches', dailyConversions[INCHES]);
+    addDailyDistanceItem('Feet', dailyConversions[FEET]);
+    addDailyDistanceItem('Miles', dailyConversions[MILES]);
+    $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 });
 
 
-function addDistanceItem(units, distance) {
+function addAllTimeDistanceItem(units, distance) {
     var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '<td/></tr>';
-    $distanceTable.append(tableAddition);
+    $allTimeDistanceTable.append(tableAddition);
+};
+
+function addDailyDistanceItem(units, distance) {
+    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '<td/></tr>';
+    $dailyDistanceTable.append(tableAddition);
 };
 
 function convertFromPixels(pixels) {
