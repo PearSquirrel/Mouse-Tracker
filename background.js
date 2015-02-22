@@ -20,7 +20,6 @@ var oldY = 0;
 // returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
     var dist = parseInt(localStorage[ALL_TIME_DISTANCE]) || 0;
-    console.log(dist)
     return dist;
 };
 
@@ -44,10 +43,10 @@ function updateCurrentDate() {
     var mm = today.getMonth() + 1; //January is 0!
     var yyyy = today.getFullYear();
     if(dd<10) {
-        dd='0'+dd
+        dd='0'+dd;
     }      
     if(mm<10) {
-        mm='0'+mm
+        mm='0'+mm;
     } 
     today = yyyy + '/' + mm + '/' + dd;
     return today;
@@ -57,7 +56,15 @@ function updateCurrentDate() {
 function updateCurrentTime() {
     var time = updateCurrentDate();
     var today = new Date();
-    time += '/' + today.getHours() + ':' + today.getMinutes();
+    var mm = today.getMinutes();
+    if(mm < 10) {
+        mm = '0' + mm;   
+    }
+    var dd = today.getHours();
+    if(dd < 10) {
+        dd = '0' + dd;   
+    }
+    time += '/' + dd + ':' + mm;
     return time;
 };
 
