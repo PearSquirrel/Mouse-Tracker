@@ -51,8 +51,8 @@ function addDailyDistanceItem(units, distance) {
 
 function convertFromPixels(pixels) {
     var conversions = [];
-    conversions.push(pixels / ppi); // inches
-    conversions.push(conversions[INCHES] / 12.0); // feet
-    conversions.push(conversions[FEET] / 5280.0); // miles
+    conversions.push( (Math.round(pixels / ppi * 100000) / 100000) ); // inches
+    conversions.push( (Math.round(conversions[INCHES] / 12.0 * 100000) / 100000) ); // feet
+    conversions.push( (Math.round(conversions[FEET] / 5280.0 * 100000) / 100000) ); // miles
     return conversions;
 };
