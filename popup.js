@@ -5,18 +5,19 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
+var $distanceList;
+
 $(document).ready(function() {
-    //renderStatus("hello");
-    var status = "Pixels: " + bgPage.distance + "\n...";
+    $distanceList = $('#distanceList');
     var conversions = convertFromPixels(bgPage.distance);
-    status += "\nInches: " + conversions[INCHES];
-    status += "\nFeet: " + conversions[FEET];
-    status += "\nMiles: " + conversions[MILES];
-    renderStatus(status);
+    addDistanceItem('Pixels', Math.floor(bgPage.distance));
+    addDistanceItem('Inches', conversions[INCHES]);
+    addDistanceItem('Feet', conversions[FEET]);
+    addDistanceItem('Miles', conversions[MILES]);
 });
 
-function renderStatus(statusText) {
-    $('#status').text(statusText);
+function addDistanceItem(units, distance) {
+    $distanceList.append('<li class="distanceItem">' + units + ': ' + distance + '</li>');
 };
 
 function convertFromPixels(pixels) {
