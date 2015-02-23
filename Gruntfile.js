@@ -15,12 +15,8 @@ module.exports = function(grunt) {
 
     // configure jshint to validate js files -----------------------------------
     jshint: {
-      options: {
-        reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
-      },
-
       // when this task is run, lint the Gruntfile and all js files in src
-      build: ['Gruntfile.js', 'src/**/*.js', '!src/bower_components/**/*.js', '!src/js/jquery-*.js']
+      build: ['Gruntfile.js', 'src/**/*.js', '!src/bower_components/**/*.js', '!src/scripts/jquery-*.js']
     },
 
     // configure uglify to minify js files -------------------------------------
@@ -29,9 +25,12 @@ module.exports = function(grunt) {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
       },
       build: {
-        files: {
-          'dist/js/scripts.min.js': ['src/js/**/*.js']
-        }
+        files: [{
+            expand: true,
+            src: '**/*.js',
+            dest: 'dist/scripts',
+            cwd: 'src/scripts'
+        }]
       }
     },
 
@@ -39,7 +38,7 @@ module.exports = function(grunt) {
     less: {
       build: {
         files: {
-          'src/css/style.css': 'src/css/style.less'
+          'src/styles/style.css': 'src/styles/style.less'
         }
       }
     },
@@ -51,23 +50,24 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/css/style.min.css': 'src/css/style.css'
+          'dist/styles/style.css': 'src/styles/style.css'
         }
       }
     },
 
     copy: {
       files: {
-        cwd: 'src/',  // set working folder / root to copy
-        src: '**',           // copy all files and subfolders
+        cwd: 'src/',      // set working folder / root to copy
+        src: ['popup.html', 'manifest.json', 'images/**', 'bower_components/**'],        // copy all files and subfolders
         dest: 'dist/',    // destination folder
-        expand: true           // required when using cwd
+        expand: true      // required when using cwd
       }
     },
 
     vulcanize: {
       options: {
         csp: true,
+        strip: true,
         excludes: {
           imports: [
             "dist/bower_components/polymer/polymer.html"
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
           'dist/popup.html': 'dist/popup.html'
         }
       }
-    }
+    },
 
   });
 
@@ -100,6 +100,6 @@ module.exports = function(grunt) {
   // CREATE TASKS ==============================================================
   // ===========================================================================
   // this default task will go through all configuration (dev and production) in each task 
-  grunt.registerTask('default', ['copy', 'jshint', 'uglify', 'cssmin', 'vulcanize']);
+  grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'cssmin', 'vulcanize']);
 
 };
