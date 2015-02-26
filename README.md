@@ -10,8 +10,3 @@ To compile from source to distribuion:
 1. Go anywhere within the project (including the root)
 2. grunt
 3. to run the extension, 'load unpacked extension' from dist
-
-Test List
-1. Item 1
-2. Item 2
-3. Item 3
