@@ -21,31 +21,31 @@ $(document).ready(function() {
     
     var pixels_allTimeDistance = bgPage.allTimeDistance;
     
-    //var pixels_dailyDistance = bgPage.dailyDistance;
-    var pixels_dailyDistance = bgPage.minutelyDistance;
+    var pixels_dailyDistance = bgPage.dailyDistance;
+    // var pixels_dailyDistance = bgPage.minutelyDistance;
     
     var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
-    addAllTimeDistanceItem('Pixels', Math.floor(pixels_allTimeDistance));
+    addAllTimeDistanceItem('Pixels', Math.round(pixels_allTimeDistance));
     addAllTimeDistanceItem('Inches', allTimeConversions[INCHES]);
     addAllTimeDistanceItem('Feet', allTimeConversions[FEET]);
     addAllTimeDistanceItem('Miles', allTimeConversions[MILES]);
     
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
-    addDailyDistanceItem('Pixels', Math.floor(pixels_dailyDistance));
+    addDailyDistanceItem('Pixels', Math.round(pixels_dailyDistance));
     addDailyDistanceItem('Inches', dailyConversions[INCHES]);
     addDailyDistanceItem('Feet', dailyConversions[FEET]);
     addDailyDistanceItem('Miles', dailyConversions[MILES]);
-    $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
+    // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 });
 
 
 function addAllTimeDistanceItem(units, distance) {
-    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '<td/></tr>';
+    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '</td></tr>';
     $allTimeDistanceTable.append(tableAddition);
 }
 
 function addDailyDistanceItem(units, distance) {
-    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '<td/></tr>';
+    var tableAddition = '<tr class="distanceTableRow"><td>' + units + '</td><td>' + distance + '</td></tr>';
     $dailyDistanceTable.append(tableAddition);
 }
 
