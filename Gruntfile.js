@@ -81,6 +81,12 @@ module.exports = function(grunt) {
       }
     },
 
+    watch: {
+      options: {livereload: true},
+      files: ['src/scripts/**', 'src/styles/**', 'src/popup.html'],
+      tasks: ['default']
+    }
+
   });
 
   // ===========================================================================
