@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         },
         files: [{
           src: ['src/styles/sass/style.scss'],
-          dest: 'src/styles/style.css',
+          dest: 'src/styles/css/style.css',
           nonull: true
         }]
       }
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/styles/style.css': 'src/styles/style.css'
+          'dist/styles/style.css': 'src/styles/css/style.css'
         }
       }
     },
