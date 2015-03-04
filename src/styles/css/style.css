@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
+@import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
 body {
   min-width: 400px;
   margin: 0px;
-  font-family: Segoe UI, Arial, sans-serif;
-  font-size: 13px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
   color: #FFF;
   background-color: #f8f6f2;
   background-image: linear-gradient(top, #4caf50 120px, #eaeaea 0%);
@@ -42,21 +44,19 @@ body {
   padding: 10px;
 }
 
-.button {
+/*.button {
   background-color: #01579B;
   display: inline-block;
   color: white;
   text-align: center;
   padding: 0;
-  padding-top: 10px;
+  padding-top: 100px;
   padding-bottom: 6px;
   border-bottom: 4px solid #01579B;
-}
-
-.button:hover {
-  border-bottom: 4px solid lightblue;
-}
-
+}*/
+/*.button:hover {
+  border-bottom: 4px solid red;
+}*/
 .left {
   float: left;
 }
@@ -78,6 +78,13 @@ body {
 
 #dailyDistanceTable {
   width: 320px;
+}
+
+/*tbody tr:nth-child(even) {
+   background-color: #E0E0E0;
+}*/
+.bold {
+  font-weight: bold;
 }
 
 /*  PAPER TABS  */
