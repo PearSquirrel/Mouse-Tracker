@@ -17,6 +17,9 @@ var yDifference = 0;
 var oldX = 0;
 var oldY = 0;
 
+// next notification milestone in miles
+var nextMilestone = allTimeDistance + 10000;
+
 // returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
     var dist = parseInt(localStorage[ALL_TIME_DISTANCE]) || 0;
@@ -75,6 +78,25 @@ function saveDistance(newDist) {
     currentMinutes = updateCurrentTime();
     minutelyDistance = loadMinutelyDistance() + newDist;
     localStorage[currentMinutes] = minutelyDistance;
+    
+    if(allTimeDistance > nextMilestone) {
+        // send notification
+        var opt = {
+            type: "basic",
+            title: "Milestone",
+            message: "You moved " + nextMilestone + " pixels!!!",
+            iconUrl: chrome.runtime.getURL('../images/icon.png')
+        };
+            
+        chrome.notifications.create('notify1', opt, function(id) {
+            console.log('heyy ' + id);   
+        });
+        
+        nextMilestone += 100000;
+        alert('time for notification.. ' + nextMilestone);
+        
+        console.log('just displayed notification!');
+    }
 }
 
 // listens for messages from page_script.js containing the latest coordinates for the mouse (Go MouseRat!)
