@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
 @import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+
 body {
   min-width: 400px;
   margin: 0px;
@@ -7,8 +8,8 @@ body {
   font-size: 16px;
   color: #01579B;
   background-color: #EAEAEA;
-  background-image: linear-gradient(top, #4caf50 102px, #eaeaea 0%);
-  background-image: -webkit-linear-gradient(top, #4caf50 102px, #eaeaea 0%);
+  background-image: linear-gradient(top, rgb(76,175,80) 102px, rgb(234,234,234) 0%);
+  background-image: -webkit-linear-gradient(top , rgb(76,175,80) 102px, rgb(234,234,234) 0%);
   max-height: 281px;
   /*background-image: -o-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
   /*background-image: -moz-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
@@ -21,7 +22,6 @@ body {
   padding-bottom: 4px;
   background-color: #01579B;
 }
-
 #header h1 {
   display: inline;
   color: #FFF;
@@ -35,16 +35,20 @@ body {
   padding-bottom: 200px;
   margin: 0 20px;
   margin-top: 20px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+#menu {
 }
 
 .distance-traveled {
-  line-height: 200px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Roboto, sans-serif;
-  font-size: 40pt;
+	line-height: 200px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
+	font-size: 40pt;
 }
 
 #content {
@@ -66,8 +70,13 @@ body {
   display: inline-block;
 }
 
-table {
-  width: 100%;
+/* DISTANCE TABLE */
+#allTimeDistanceTable {
+    width: 100%;
+}
+
+#dailyDistanceTable {
+    width: 100%;
 }
 
 .bold {
@@ -75,34 +84,32 @@ table {
 }
 
 /*  PAPER TABS  */
-paper-tabs, core-toolbar {
-  background-color: #01579B;
-  color: #fff;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-}
-
-core-toolbar paper-tabs {
-  height: 40px !important;
-  box-shadow: none;
-}
-
-paper-tabs paper-tab.core-selected {
-  color: #FFF;
-}
-
-paper-tabs {
-  background-color: #01579B;
-  color: #FFF;
-  box-shadow: none;
-}
-
-paper-tabs::shadow #selectionBar {
-  background-color: lightblue;
-  height: 4px;
-}
-
-paper-tabs paper-tab::shadow #ink {
-  color: lightblue;
-}
-
-/*# sourceMappingURL=style.css.map */
+    paper-tabs, core-toolbar {
+      background-color: #01579B;
+      color: #fff;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    core-toolbar paper-tabs {
+      height: 40px !important;
+      box-shadow: none;
+    }
+    
+    paper-tabs paper-tab.core-selected {
+      color: #FFF;
+    }
+    
+    paper-tabs {
+      background-color: #01579B;
+      color: #FFF;
+      box-shadow: none;
+    }
+    
+    paper-tabs::shadow #selectionBar {
+      background-color: lightblue;
+      height: 4px;
+    }
+    
+    paper-tabs paper-tab::shadow #ink {
+      color: lightblue;
+    }
