@@ -34,14 +34,14 @@ $(document).ready(function() {
     addAllTimeDistanceItem('Miles', Number(Math.floor(allTimeConversions[MILES])).toLocaleString('en'));
     
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
-    addDailyDistanceItem('Pixels', Math.floor(pixels_dailyDistance));
-    addDailyDistanceItem('Inches', Math.floor(dailyConversions[INCHES]));
-    addDailyDistanceItem('Feet', Math.floor(dailyConversions[FEET]));
-    addDailyDistanceItem('Miles', Math.floor(dailyConversions[MILES]));
+    addDailyDistanceItem('Pixels', Number(Math.floor(pixels_dailyDistance)).toLocaleString('en'));
+    addDailyDistanceItem('Inches', Number(Math.floor(dailyConversions[INCHES])).toLocaleString('en'));
+    addDailyDistanceItem('Feet', Number(Math.floor(dailyConversions[FEET])).toLocaleString('en'));
+    addDailyDistanceItem('Miles', Number(Math.floor(dailyConversions[MILES])).toLocaleString('en'));
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 
     var quickLook = document.getElementById('distance-traveled');
-    quickLook.innerHTML = Math.floor(pixels_dailyDistance);
+    quickLook.innerHTML = Number(Math.floor(pixels_dailyDistance)).toLocaleString('en') + " pixels so far today";
 });
 
 
