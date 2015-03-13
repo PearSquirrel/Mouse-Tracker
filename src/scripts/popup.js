@@ -26,15 +26,15 @@ $(document).ready(function() {
     
     var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
     addAllTimeDistanceItem('Pixels', Math.round(pixels_allTimeDistance));
-    addAllTimeDistanceItem('Inches', allTimeConversions[INCHES]);
-    addAllTimeDistanceItem('Feet', allTimeConversions[FEET]);
-    addAllTimeDistanceItem('Miles', allTimeConversions[MILES]);
+    addAllTimeDistanceItem('Inches', Math.round(allTimeConversions[INCHES]));
+    addAllTimeDistanceItem('Feet', Math.round(allTimeConversions[FEET]));
+    addAllTimeDistanceItem('Miles', Math.round(allTimeConversions[MILES]));
     
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
     addDailyDistanceItem('Pixels', Math.round(pixels_dailyDistance));
-    addDailyDistanceItem('Inches', dailyConversions[INCHES]);
-    addDailyDistanceItem('Feet', dailyConversions[FEET]);
-    addDailyDistanceItem('Miles', dailyConversions[MILES]);
+    addDailyDistanceItem('Inches', Math.round(dailyConversions[INCHES]));
+    addDailyDistanceItem('Feet', Math.round(dailyConversions[FEET]));
+    addDailyDistanceItem('Miles', Math.round(dailyConversions[MILES]));
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 });
 
