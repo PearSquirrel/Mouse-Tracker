@@ -5,6 +5,8 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
+var maxCutoff = 1000000;
+
 var $allTimeDistanceTable;
 var $dailyDistanceTable;
 
@@ -41,7 +43,17 @@ $(document).ready(function() {
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 
     var quickLook = document.getElementById('distance-traveled');
-    quickLook.innerHTML = Number(Math.floor(pixels_dailyDistance)).toLocaleString('en') + " pixels so far today";
+    var number = "";
+    if (pixels_dailyDistance < maxCutoff) {
+        number = Number(Math.floor(pixels_dailyDistance)).toLocaleString('en') + " pixels";
+    } else if (dailyConversions[INCHES] < maxCutoff) {
+        number = Number(Math.floor(dailyConversions[INCHES])).toLocaleString('en') + " inches";
+    } else if (dailyConversions[FEET] < maxCutoff) {
+        number = Number(Math.floor(dailyConversions[FEET])).toLocaleString('en') + " feet";
+    } else {
+        number = Number(Math.floor(dailyConversions[MILES])).toLocaleString('en') + " miles";
+    }
+    quickLook.innerHTML = number + " so far today";
 });
 
 
