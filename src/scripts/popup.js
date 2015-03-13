@@ -53,7 +53,7 @@ $(document).ready(function() {
     } else {
         number = Number(Math.floor(dailyConversions[MILES])).toLocaleString('en') + " miles";
     }
-    quickLook.innerHTML = number + " so far today";
+    quickLook.innerHTML = number + " today";
 });
 
 
