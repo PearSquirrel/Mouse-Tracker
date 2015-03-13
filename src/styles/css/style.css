@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
+@import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+body {
+  min-width: 400px;
+  margin: 0px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: #FFF;
+  background-color: #f8f6f2;
+  background-image: linear-gradient(top, #4caf50 120px, #eaeaea 0%);
+  background-image: -o-linear-gradient(top, #4caf50 120px, #eaeaea 0%);
+  background-image: -moz-linear-gradient(top, #4caf50 120px, #eaeaea 0%);
+  background-image: -webkit-linear-gradient(top, #4caf50 120px, #eaeaea 0%);
+  background-image: -ms-linear-gradient(top, #4caf50 120px, #eaeaea 0%);
+}
+
+#header {
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #01579B;
+}
+
+#header h1 {
+  display: inline;
+  color: #FFF;
+  font-size: 14pt;
+}
+
+#wrapper {
+  width: 360px;
+  background-color: #FFF;
+  color: #000;
+  padding-bottom: 200px;
+  margin: 0 20px;
+  margin-top: 20px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#content {
+  clear: both;
+  padding: 10px;
+}
+
+/*.button {
+  background-color: #01579B;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 0;
+  padding-top: 100px;
+  padding-bottom: 6px;
+  border-bottom: 4px solid #01579B;
+}*/
+/*.button:hover {
+  border-bottom: 4px solid red;
+}*/
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.half {
+  position: relative;
+  width: 50%;
+  display: inline-block;
+}
+
+/* DISTANCE TABLE */
+#allTimeDistanceTable {
+  width: 320px;
+}
+
+#dailyDistanceTable {
+  width: 320px;
+}
+
+/*tbody tr:nth-child(even) {
+   background-color: #E0E0E0;
+}*/
+.bold {
+  font-weight: bold;
+}
+
+/*  PAPER TABS  */
+paper-tabs, core-toolbar {
+  background-color: #01579B;
+  color: #fff;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+core-toolbar paper-tabs {
+  height: 40px !important;
+  box-shadow: none;
+}
+
+paper-tabs paper-tab.core-selected {
+  color: #FFF;
+}
+
+paper-tabs {
+  background-color: #01579B;
+  color: #FFF;
+  box-shadow: none;
+}
+
+paper-tabs::shadow #selectionBar {
+  background-color: lightblue;
+  height: 4px;
+}
+
+paper-tabs paper-tab::shadow #ink {
+  color: lightblue;
+}
+
+/*# sourceMappingURL=style.css.map */

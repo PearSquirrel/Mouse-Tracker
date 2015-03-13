@@ -34,12 +34,16 @@ module.exports = function(grunt) {
       }
     },
 
-    // compile less stylesheets to css -----------------------------------------
-    less: {
+    sass: {
       build: {
-        files: {
-          'src/styles/style.css': 'src/styles/style.less'
-        }
+        options: {
+          style: 'expanded'
+        },
+        files: [{
+          src: ['src/styles/sass/style.scss'],
+          dest: 'src/styles/css/style.css',
+          nonull: true
+        }]
       }
     },
 
@@ -50,7 +54,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/styles/style.css': 'src/styles/style.css'
+          'dist/styles/style.css': 'src/styles/css/style.css'
         }
       }
     },
@@ -96,7 +100,7 @@ module.exports = function(grunt) {
   // make sure you have run npm install so our app can find these
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-vulcanize');
@@ -106,6 +110,6 @@ module.exports = function(grunt) {
   // CREATE TASKS ==============================================================
   // ===========================================================================
   // this default task will go through all configuration (dev and production) in each task 
-  grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'cssmin', 'vulcanize']);
+  grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'sass', 'cssmin', 'vulcanize']);
 
 };
