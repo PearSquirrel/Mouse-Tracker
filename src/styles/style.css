@@ -7,9 +7,10 @@ body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   color: #01579B;
-  background-color: #EAEAEA;
-  background-image: linear-gradient(top, rgb(76,175,80) 102px, rgb(234,234,234) 0%);
-  background-image: -webkit-linear-gradient(top , rgb(76,175,80) 102px, rgb(234,234,234) 0%);
+/*  background-color: #EAEAEA;
+*//*  background-image: linear-gradient(top, rgb(76,175,80) 102px, rgb(234,234,234) 0%);
+  background-image: -webkit-linear-gradient(top , rgb(76,175,80) 102px, rgb(234,234,234) 0%);*/
+  background: #4CAF50;
   max-height: 281px;
   /*background-image: -o-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
   /*background-image: -moz-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/

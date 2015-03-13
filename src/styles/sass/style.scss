@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
 @import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+//Green: #4CAF50
+//Gray: #EAEAEA
+//Blue: #01579B
 
 body {
   min-width: 400px;
@@ -38,11 +41,12 @@ body {
 }
 
 .distance-traveled {
-	line-height: 200px;
+	line-height: 50px;
 	text-align: center;
 	text-transform: uppercase;
 	font-family: Roboto, sans-serif;
-	font-size: 40pt;
+	font-size: 24pt;
+  color: #fff;
 }
 
 #content {

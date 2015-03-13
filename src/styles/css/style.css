@@ -37,11 +37,12 @@ body {
 }
 
 .distance-traveled {
-  line-height: 200px;
+  line-height: 50px;
   text-align: center;
   text-transform: uppercase;
   font-family: Roboto, sans-serif;
-  font-size: 40pt;
+  font-size: 24pt;
+  color: #fff;
 }
 
 #content {

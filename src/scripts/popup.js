@@ -25,16 +25,16 @@ $(document).ready(function() {
     // var pixels_dailyDistance = bgPage.minutelyDistance;
     
     var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
-    addAllTimeDistanceItem('Pixels', Math.round(pixels_allTimeDistance));
-    addAllTimeDistanceItem('Inches', Math.round(allTimeConversions[INCHES]));
-    addAllTimeDistanceItem('Feet', Math.round(allTimeConversions[FEET]));
-    addAllTimeDistanceItem('Miles', Math.round(allTimeConversions[MILES]));
+    addAllTimeDistanceItem('Pixels', Math.floor(pixels_allTimeDistance));
+    addAllTimeDistanceItem('Inches', Math.floor(allTimeConversions[INCHES]));
+    addAllTimeDistanceItem('Feet', Math.floor(allTimeConversions[FEET]));
+    addAllTimeDistanceItem('Miles', Math.floor(allTimeConversions[MILES]));
     
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
-    addDailyDistanceItem('Pixels', Math.round(pixels_dailyDistance));
-    addDailyDistanceItem('Inches', Math.round(dailyConversions[INCHES]));
-    addDailyDistanceItem('Feet', Math.round(dailyConversions[FEET]));
-    addDailyDistanceItem('Miles', Math.round(dailyConversions[MILES]));
+    addDailyDistanceItem('Pixels', Math.floor(pixels_dailyDistance));
+    addDailyDistanceItem('Inches', Math.floor(dailyConversions[INCHES]));
+    addDailyDistanceItem('Feet', Math.floor(dailyConversions[FEET]));
+    addDailyDistanceItem('Miles', Math.floor(dailyConversions[MILES]));
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 });
 
