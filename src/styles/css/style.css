@@ -9,7 +9,6 @@ body {
   background-color: #EAEAEA;
   background-image: linear-gradient(top, #4caf50 102px, #eaeaea 0%);
   background-image: -webkit-linear-gradient(top, #4caf50 102px, #eaeaea 0%);
-  max-height: 281px;
 }
 
 #header {
