@@ -21,6 +21,9 @@ $(document).ready(function() {
     
     var pixels_allTimeDistance = bgPage.allTimeDistance;
     
+
+
+
     var pixels_dailyDistance = bgPage.dailyDistance;
     // var pixels_dailyDistance = bgPage.minutelyDistance;
     
@@ -36,6 +39,9 @@ $(document).ready(function() {
     addDailyDistanceItem('Feet', Math.floor(dailyConversions[FEET]));
     addDailyDistanceItem('Miles', Math.floor(dailyConversions[MILES]));
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
+
+        var quickLook = document.getElementById('distance-traveled');
+    quickLook.innerHTML = Math.floor(pixels_dailyDistance);
 });
 
 

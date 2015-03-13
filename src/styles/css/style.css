@@ -36,7 +36,7 @@ body {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.distance-traveled {
+#distance-traveled {
   line-height: 50px;
   text-align: center;
   text-transform: uppercase;
