@@ -10,9 +10,6 @@ body {
   background-image: linear-gradient(top, #4caf50 102px, #eaeaea 0%);
   background-image: -webkit-linear-gradient(top, #4caf50 102px, #eaeaea 0%);
   max-height: 281px;
-  /*background-image: -o-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
-  /*background-image: -moz-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
-  /*background-image: -ms-linear-gradient(top, rgb(76,175,80) 120px, rgb(234,234,234) 0%);*/
 }
 
 #header {
