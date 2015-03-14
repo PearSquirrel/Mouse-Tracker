@@ -89,6 +89,8 @@ table {
       paper-tab.core-selected {
         color: #FFF;
       }
+      border-top: solid 4px;
+      border-color: $color-light-blue;
       background-color: #01579B;
       color: #FFF;
       box-shadow: none;
