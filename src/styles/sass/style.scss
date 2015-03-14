@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
 @import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+@import 'vars';
 //Green: #4CAF50
 //Gray: #EAEAEA
 //Blue: #01579B
@@ -11,8 +12,8 @@ body {
   font-size: 16px;
   color: #01579B;
   background-color: #EAEAEA;
-  background-image: linear-gradient(top, rgb(76,175,80) 102px, rgb(234,234,234) 0%);
-  background-image: -webkit-linear-gradient(top , rgb(76,175,80) 102px, rgb(234,234,234) 0%);
+  background-image: linear-gradient(top, $color-green, $color-gray 0%);
+  background-image: -webkit-linear-gradient(top , $color-green 102px, $color-gray 0%);
 }
 
 #header {

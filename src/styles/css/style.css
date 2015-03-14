@@ -7,8 +7,8 @@ body {
   font-size: 16px;
   color: #01579B;
   background-color: #EAEAEA;
-  background-image: linear-gradient(top, #4caf50 102px, #eaeaea 0%);
-  background-image: -webkit-linear-gradient(top, #4caf50 102px, #eaeaea 0%);
+  background-image: linear-gradient(top, #4CAF50, #EAEAEA 0%);
+  background-image: -webkit-linear-gradient(top, #4CAF50 102px, #EAEAEA 0%);
 }
 
 #header {
@@ -17,7 +17,6 @@ body {
   padding-bottom: 4px;
   background-color: #01579B;
 }
-
 #header h1 {
   display: inline;
   color: #FFF;
