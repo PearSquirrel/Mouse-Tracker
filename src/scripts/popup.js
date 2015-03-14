@@ -7,7 +7,10 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
-var maxCutoff = 1000000; //Cutoff for when QuickView changes from one unit to the nexts
+//Cutoffs for when QuickView switches from one unit to the next
+var pixelsCutoff = 100000;
+var inchesCutoff = 36;
+var feetCutoff = 5280;
 
 var $allTimeDistanceTable;
 var $dailyDistanceTable;
@@ -30,15 +33,15 @@ $(document).ready(function() {
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
     addDailyDistanceItem('Pixels', Number(Math.floor(pixels_dailyDistance)).toLocaleString('en'));
     addDailyDistanceItem('Inches', Number(Math.floor(dailyConversions[INCHES])).toLocaleString('en'));
-    addDailyDistanceItem('Feet', Number(Math.floor(dailyConversions[FEET])).toLocaleString('en'));
-    addDailyDistanceItem('Miles', Number(dailyConversions[MILES]).toLocaleString('en'));
+    addDailyDistanceItem('Feet', Number((dailyConversions[FEET]).toFixed(1)).toLocaleString('en'));
+    addDailyDistanceItem('Miles', Number((dailyConversions[MILES]).toFixed(3)).toLocaleString('en'));
     
     //Add all time distances to the table
     var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
     addAllTimeDistanceItem('Pixels', Number(Math.floor(pixels_allTimeDistance)).toLocaleString('en'));
     addAllTimeDistanceItem('Inches', Number(Math.floor(allTimeConversions[INCHES])).toLocaleString('en'));
-    addAllTimeDistanceItem('Feet', Number(Math.floor(allTimeConversions[FEET])).toLocaleString('en'));
-    addAllTimeDistanceItem('Miles', Number(allTimeConversions[MILES]).toLocaleString('en'));
+    addAllTimeDistanceItem('Feet', Number((allTimeConversions[FEET]).toFixed(1)).toLocaleString('en'));
+    addAllTimeDistanceItem('Miles', Number((allTimeConversions[MILES]).toFixed(3)).toLocaleString('en'));
     
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 
@@ -49,14 +52,14 @@ $(document).ready(function() {
 
 function generateQuickViewNumber(pixels_dailyDistance, dailyConversions) {
     var number = "";
-    if (pixels_dailyDistance < maxCutoff) {
-        number = Number(Math.floor(pixels_dailyDistance)).toLocaleString('en') + " pixels";
-    } else if (dailyConversions[INCHES] < maxCutoff) {
-        number = Number(Math.floor(dailyConversions[INCHES])).toLocaleString('en') + " inches";
-    } else if (dailyConversions[FEET] < maxCutoff) {
-        number = Number(Math.floor(dailyConversions[FEET])).toLocaleString('en') + " feet";
+    if (pixels_dailyDistance < pixelsCutoff) {
+        number = Number(pixels_dailyDistance).toLocaleString('en') + " pixels";
+    } else if (dailyConversions[INCHES] < inchesCutoff) {
+        number = Number(dailyConversions[INCHES]).toLocaleString('en') + " inches";
+    } else if (dailyConversions[FEET] < feetCutoff) {
+        number = Number((dailyConversions[FEET]).toFixed(1)).toLocaleString('en') + " feet";
     } else {
-        number = Number(Math.floor(dailyConversions[MILES])).toLocaleString('en') + " miles";
+        number = Number((dailyConversions[MILES]).toFixed(3)).toLocaleString('en') + " miles";
     }
     return number;
 }
