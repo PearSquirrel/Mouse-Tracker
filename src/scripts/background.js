@@ -9,6 +9,9 @@ var dailyDistance = loadDailyDistance();
 var currentMinutes = updateCurrentTime();
 var minutelyDistance = loadMinutelyDistance();
 
+// notification ID
+var notificationID = 0;
+
 // the variables are used to calculate changes in distance based on mouse x and y coordinates
 var x = 0;
 var y = 0;
@@ -87,15 +90,13 @@ function saveDistance(newDist) {
             message: "You moved " + nextMilestone + " pixels!!!",
             iconUrl: chrome.runtime.getURL('../images/icon.png')
         };
-            
-        chrome.notifications.create('notify1', opt, function(id) {
-            console.log('heyy ' + id);   
+        
+        chrome.notifications.create('notify' + notificationID, opt, function(id) {
+            console.log('displayed notification ' + id);
         });
-        
-        nextMilestone += 100000;
-        alert('time for notification.. ' + nextMilestone);
-        
-        console.log('just displayed notification!');
+
+        notificationID += 1;
+        nextMilestone += 10000;
     }
 }
 
