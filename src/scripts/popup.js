@@ -7,7 +7,7 @@ var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
-var maxCutoff = 1000000; //Cutoff for when QuickView changes from one unit to the next
+var maxCutoff = 1000000; //Cutoff for when QuickView changes from one unit to the nexts
 
 var $allTimeDistanceTable;
 var $dailyDistanceTable;

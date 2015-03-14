@@ -79,7 +79,7 @@ paper-tabs, core-toolbar {
 }
 
 paper-tabs {
-  border-top: solid 4px;
+  border-top: solid 1px;
   border-color: #A7CEDE;
   background-color: #01579B;
   color: #FFF;
