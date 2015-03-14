@@ -7,9 +7,9 @@ body {
   font-size: 16px;
   color: #01579B;
   background-color: #EAEAEA;
-  background-image: linear-gradient(top, #4caf50 102px, #eaeaea 0%);
-  background-image: -webkit-linear-gradient(top, #4caf50 102px, #eaeaea 0%);
-  max-height: 281px;
+  background-image: linear-gradient(top, #4CAF50, #EAEAEA 0%);
+  background-image: -webkit-linear-gradient(top, #4CAF50 102px, #EAEAEA 0%);
+  overflow: hidden;
 }
 
 #header {
@@ -18,7 +18,6 @@ body {
   padding-bottom: 4px;
   background-color: #01579B;
 }
-
 #header h1 {
   display: inline;
   color: #FFF;
@@ -29,20 +28,20 @@ body {
   width: 360px;
   background-color: #FFF;
   color: #000;
-  padding-bottom: 200px;
+  padding-bottom: 191px;
   margin: 0 20px;
   margin-top: 20px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.distance-traveled {
+#distance-traveled {
   line-height: 50px;
   text-align: center;
-  text-transform: uppercase;
   font-family: Roboto, sans-serif;
-  font-size: 24pt;
-  color: #fff;
+  font-size: 16pt;
+  color: #FFF;
+  border-color: #A7CEDE;
 }
 
 #content {
@@ -79,19 +78,15 @@ paper-tabs, core-toolbar {
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
-core-toolbar paper-tabs {
-  height: 40px !important;
-  box-shadow: none;
-}
-
-paper-tabs paper-tab.core-selected {
-  color: #FFF;
-}
-
 paper-tabs {
+  border-top: solid 1px;
+  border-color: #A7CEDE;
   background-color: #01579B;
   color: #FFF;
   box-shadow: none;
+}
+paper-tabs paper-tab.core-selected {
+  color: #FFF;
 }
 
 paper-tabs::shadow #selectionBar {
