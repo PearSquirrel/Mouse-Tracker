@@ -1,17 +1,18 @@
 var bgPage = chrome.extension.getBackgroundPage();
 
 var ppi = 227.0; // need to change based on user screen size
+
+//Indices for different units
 var INCHES = 0;
 var FEET = 1;
 var MILES = 2;
 
-var maxCutoff = 1000000;
+var maxCutoff = 1000000; //Cutoff for when QuickView changes from one unit to the next
 
 var $allTimeDistanceTable;
 var $dailyDistanceTable;
 
 $(document).ready(function() {
-    
     var pages = document.querySelector('core-pages');
     var tabs = document.querySelector('paper-tabs');
     tabs.addEventListener('core-select', function() {
@@ -22,27 +23,31 @@ $(document).ready(function() {
     $dailyDistanceTable = $('#dailyDistanceTable');
     
     var pixels_allTimeDistance = bgPage.allTimeDistance;
-    
-
-
 
     var pixels_dailyDistance = bgPage.dailyDistance;
-    // var pixels_dailyDistance = bgPage.minutelyDistance;
     
-    var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
-    addAllTimeDistanceItem('Pixels', Number(Math.floor(pixels_allTimeDistance)).toLocaleString('en'));
-    addAllTimeDistanceItem('Inches', Number(Math.floor(allTimeConversions[INCHES])).toLocaleString('en'));
-    addAllTimeDistanceItem('Feet', Number(Math.floor(allTimeConversions[FEET])).toLocaleString('en'));
-    addAllTimeDistanceItem('Miles', Number(Math.floor(allTimeConversions[MILES])).toLocaleString('en'));
-    
+    //Add daily distances to the table
     var dailyConversions = convertFromPixels(pixels_dailyDistance);
     addDailyDistanceItem('Pixels', Number(Math.floor(pixels_dailyDistance)).toLocaleString('en'));
     addDailyDistanceItem('Inches', Number(Math.floor(dailyConversions[INCHES])).toLocaleString('en'));
     addDailyDistanceItem('Feet', Number(Math.floor(dailyConversions[FEET])).toLocaleString('en'));
-    addDailyDistanceItem('Miles', Number(Math.floor(dailyConversions[MILES])).toLocaleString('en'));
+    addDailyDistanceItem('Miles', Number(dailyConversions[MILES]).toLocaleString('en'));
+    
+    //Add all time distances to the table
+    var allTimeConversions = convertFromPixels(pixels_allTimeDistance);
+    addAllTimeDistanceItem('Pixels', Number(Math.floor(pixels_allTimeDistance)).toLocaleString('en'));
+    addAllTimeDistanceItem('Inches', Number(Math.floor(allTimeConversions[INCHES])).toLocaleString('en'));
+    addAllTimeDistanceItem('Feet', Number(Math.floor(allTimeConversions[FEET])).toLocaleString('en'));
+    addAllTimeDistanceItem('Miles', Number(allTimeConversions[MILES]).toLocaleString('en'));
+    
     // $('.tab-content').append('Current Time: ' + bgPage.currentMinutes);
 
-    var quickLook = document.getElementById('distance-traveled');
+    //Display QuickView
+    var quickView = document.getElementById('distance-traveled');
+    quickView.innerHTML = generateQuickViewNumber(pixels_dailyDistance, dailyConversions) + " today";
+});
+
+function generateQuickViewNumber(pixels_dailyDistance, dailyConversions) {
     var number = "";
     if (pixels_dailyDistance < maxCutoff) {
         number = Number(Math.floor(pixels_dailyDistance)).toLocaleString('en') + " pixels";
@@ -53,8 +58,8 @@ $(document).ready(function() {
     } else {
         number = Number(Math.floor(dailyConversions[MILES])).toLocaleString('en') + " miles";
     }
-    quickLook.innerHTML = number + " today";
-});
+    return number;
+}
 
 
 function addAllTimeDistanceItem(units, distance) {

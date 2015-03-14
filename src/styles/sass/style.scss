@@ -1,16 +1,14 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin,greek);
 @import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
 @import 'vars';
-//Green: #4CAF50
-//Gray: #EAEAEA
-//Blue: #01579B
 
 body {
   min-width: 400px;
   margin: 0px;
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
-  color: #01579B;
+  color: $color-primary;
   background-color: #EAEAEA;
   background-image: linear-gradient(top, $color-header-bg, $color-gray 0%);
   background-image: -webkit-linear-gradient(top , $color-header-bg 102px, $color-gray 0%);
@@ -21,10 +19,10 @@ body {
   text-align: center;
   padding-top: 4px;
   padding-bottom: 4px;
-  background-color: #01579B;
+  background-color: $color-primary;
   h1 {
     display: inline;
-    color: #FFF;
+    color: $color-title-font;
     font-size: 14pt;
   }
 }
@@ -47,7 +45,7 @@ body {
 	font-family: Roboto, sans-serif;
 	font-size: 16pt;
   color: $color-title-font;
-  border-color: #A7CEDE;
+  border-color: $color-accent;
 }
 
 #content {
@@ -79,7 +77,7 @@ table {
 
 /*  PAPER TABS  */
     paper-tabs, core-toolbar {
-      background-color: #01579B;
+      background-color: $color-primary;
       color: #fff;
       box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
     }
@@ -90,8 +88,8 @@ table {
         color: #FFF;
       }
       border-top: solid 4px;
-      border-color: $color-light-blue;
-      background-color: #01579B;
+      border-color: $color-accent;
+      background-color: $color-primary;
       color: #FFF;
       box-shadow: none;
     }
