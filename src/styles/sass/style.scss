@@ -10,8 +10,8 @@ body {
   font-size: 16px;
   color: $color-primary;
   background-color: #EAEAEA;
-  background-image: linear-gradient(top, $color-header-bg, $color-gray 0%);
-  background-image: -webkit-linear-gradient(top , $color-header-bg 102px, $color-gray 0%);
+  background-image: linear-gradient(top, $color-header-bg-primary, $color-header-bg-secondary 0%);
+  background-image: -webkit-linear-gradient(top , $color-header-bg-primary 102px, $color-header-bg-secondary 0%);
   overflow: hidden;
 }
 
