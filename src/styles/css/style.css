@@ -9,6 +9,7 @@ body {
   background-color: #EAEAEA;
   background-image: linear-gradient(top, #4CAF50, #EAEAEA 0%);
   background-image: -webkit-linear-gradient(top, #4CAF50 102px, #EAEAEA 0%);
+  overflow: hidden;
 }
 
 #header {
@@ -39,9 +40,8 @@ body {
   text-align: center;
   font-family: Roboto, sans-serif;
   font-size: 16pt;
-  color: #fff;
-  border-bottom: solid 1px;
-  border-color: #EAEAEA;
+  color: #FFF;
+  border-color: #A7CEDE;
 }
 
 #content {
@@ -78,19 +78,15 @@ paper-tabs, core-toolbar {
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
-core-toolbar paper-tabs {
-  height: 40px !important;
-  box-shadow: none;
-}
-
-paper-tabs paper-tab.core-selected {
-  color: #FFF;
-}
-
 paper-tabs {
+  border-top: solid 4px;
+  border-color: #A7CEDE;
   background-color: #01579B;
   color: #FFF;
   box-shadow: none;
+}
+paper-tabs paper-tab.core-selected {
+  color: #FFF;
 }
 
 paper-tabs::shadow #selectionBar {
