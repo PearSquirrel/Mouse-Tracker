@@ -17,6 +17,8 @@ var yDifference = 0;
 var oldX = 0;
 var oldY = 0;
 
+var notificationID = 0;
+
 // next notification milestone in miles
 var nextMilestone = allTimeDistance + 10000;
 
@@ -88,13 +90,12 @@ function saveDistance(newDist) {
             iconUrl: chrome.runtime.getURL('../images/icon.png')
         };
             
-        chrome.notifications.create('notify1', opt, function(id) {
-            console.log('heyy ' + id);   
+        chrome.notifications.create('notify' + notificationID, opt, function(id) {
+            console.log('displayed ' + id);   
         });
         
         nextMilestone += 100000;
-        alert('time for notification.. ' + nextMilestone);
-        
+        notificationID += 1;        
         console.log('just displayed notification!');
     }
 }
