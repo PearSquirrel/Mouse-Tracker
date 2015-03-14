@@ -1,9 +1,9 @@
 <!doctype html>
 <!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+This page is shown when the extension button is clicked, because the
+"browser_action" field in manifest.json contains the "default_popup" key with
+value "popup.html".
+-->
 <html>
     <head>
         <title>Mouse Tracker</title>
@@ -15,52 +15,55 @@
         <script src="scripts/jquery-1.11.2.js"></script>
         <script src="scripts/popup.js"></script>
     </head>
-  
+    
     <body>
         
         <div id="wrapper">
             
             <div id="header">
-				<h1>Mouse Tracker</h1>
-			</div>
+                <h1>Mouse Tracker</h1>
+            </div>
             
-			<paper-tabs selected="0">
-  				<paper-tab>Daily</paper-tab>
- 				<paper-tab>All-Time</paper-tab>
-			</paper-tabs>
+            <paper-tabs selected="0">
+                <paper-tab>Daily</paper-tab>
+                <paper-tab>All-Time</paper-tab>
+<!--                 <paper-tab>Centered</paper-tab>
+ -->            </paper-tabs>
+<core-pages flex>
 
-            <core-pages flex>
-                
-                <div class="tab-content" id="page-1">
-                    
-                    <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
-                        <thead>
-                        <tr class="distanceTableRow">
-                            <th class="bold">Units</th>
-                            <th>Distance</th>
-                        </tr>
-                        </thead>
-                    </table>
-                    
-                </div>
-                
-                <div class="tab-content" id="page-2">
-                    
-                    <table id="allTimeDistanceTable">
-                        <tr class="distanceTableRow">
-                            <th>Units</th>
-                            <th>Distance</th>
-                        </tr>
-                    </table>
-                    
-                </div>
-                
-            </core-pages>
-	   </div>
-        
-	   <div id="footer">
-	   </div>
-        
-    </body>
+<div class="tab-content" id="page-1">
+    
+    <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+        <thead>
+            <tr class="distanceTableRow">
+                <th class="bold">Units</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<div class="tab-content" id="page-2">
+
+<table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+<thead>
+    <tr class="distanceTableRow">
+        <th>Units</th>
+        <th>Distance</th>
+    </tr>
+    </thead>
+</table>
+
+</div>
+<!-- <div class="tab-content" id="page-4">
+<section class="distance-traveled">1000 pixels</section>
+</div> -->
+
+</core-pages>
+</div>
+
+<div id="footer">
+</div>
+
+</body>
 </html>
-
