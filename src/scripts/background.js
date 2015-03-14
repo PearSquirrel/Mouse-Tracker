@@ -20,6 +20,8 @@ var yDifference = 0;
 var oldX = 0;
 var oldY = 0;
 
+var notificationID = 0;
+
 // next notification milestone in miles
 var nextMilestone = allTimeDistance + 10000;
 
@@ -90,7 +92,7 @@ function saveDistance(newDist) {
             message: "You moved " + nextMilestone + " pixels!!!",
             iconUrl: chrome.runtime.getURL('../images/icon.png')
         };
-        
+	 
         chrome.notifications.create('notify' + notificationID, opt, function(id) {
             console.log('displayed notification ' + id);
         });
