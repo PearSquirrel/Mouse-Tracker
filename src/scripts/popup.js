@@ -76,7 +76,21 @@ $(document).ready(function() {
     
     // activates the consecutive pulses/switches every 8 seconds
     // the 8 seconds includes the 3 seconds it takes to complete the switching animation
-    setInterval(updateQuickView, 6000); 
+    setInterval(updateQuickView, 6000);
+
+    // update height of page to account for generated content and absolute positioning
+    var biggestHeight = "0";
+    // Loop through elements children to find & set the biggest height
+    $("core-animated-pages#page-content *").each(function(){
+        // If this elements height is bigger than the biggestHeight
+        if ($(this).height() > biggestHeight ) {
+            // Set the biggestHeight to this Height
+            biggestHeight = $(this).height();
+        }
+    });
+
+    // Set the container height
+    $("core-animated-pages#page-content").height(biggestHeight);
 });
  
 // switches between showing the daily amount and the all time amount
