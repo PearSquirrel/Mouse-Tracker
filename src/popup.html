@@ -26,6 +26,23 @@ value "popup.html".
             </div>
             
             <paper-tabs selected="0" alignBottom>
+                <paper-tab id="todayTab">Today</paper-tab>
+                <paper-tab id="allTimeTab">All-Time</paper-tab>
+            </paper-tabs>
+            
+            <core-pages flex>
+                
+                <div class="tab-content" id="page-1">
+                    <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+                        <thead>
+                            <tr class="distanceTableRow">
+                                <th class="bold">Units</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
                 <paper-tab>Today</paper-tab>
                 <paper-tab>All-Time</paper-tab>
            </paper-tabs>
@@ -55,12 +72,25 @@ value "popup.html".
 </table>
 
 </div>
+>>>>>>> master
 
-</core-pages>
-</div>
+                <div class="tab-content" id="page-2">
+                    <table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+                        <thead>
+                            <tr class="distanceTableRow">
+                                <th>Units</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
 
-<div id="footer">
-</div>
+            </core-pages>
+            
+        </div>
+        
+        <div id="footer">
+        </div>
 
-</body>
+    </body>
 </html>
