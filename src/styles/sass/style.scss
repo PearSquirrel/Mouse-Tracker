@@ -12,8 +12,8 @@ body {
   background-color: #EAEAEA;
   background-image: linear-gradient(top, $color-header-bg-primary, $color-header-bg-secondary 0%);
   background-image: -webkit-linear-gradient(top , $color-header-bg-primary 102px, $color-header-bg-secondary 0%);
-  overflow: hidden;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #header {
