@@ -98,7 +98,7 @@ function saveDistance(newDist) {
         });
 
         notificationID += 1;
-        nextMilestone += 10000;
+        nextMilestone += 100000;
     }
 }
 
