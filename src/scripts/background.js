@@ -1,3 +1,5 @@
+var showNotifications = true;
+
 // constants for local storage
 var ALL_TIME_DISTANCE = "allTimeDistance";
 
@@ -84,7 +86,7 @@ function saveDistance(newDist) {
     minutelyDistance = loadMinutelyDistance() + newDist;
     localStorage[currentMinutes] = minutelyDistance;
     
-    if(allTimeDistance > nextMilestone) {
+    if(allTimeDistance > nextMilestone && showNotifications) {
         // send notification
         var opt = {
             type: "basic",
@@ -98,7 +100,7 @@ function saveDistance(newDist) {
         });
 
         notificationID += 1;
-        nextMilestone += 100000;
+        nextMilestone += 10000;
     }
 }
 
