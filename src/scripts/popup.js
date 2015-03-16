@@ -69,16 +69,16 @@ $(document).ready(function() {
     $distanceTraveled.html(generateQuickViewNumber(pixels_dailyDistance, dailyConversions) + ' today');
     
     // activates the first pulse/switch after 1 second
-    setTimeout(updateQuickView, 1000);
+    setTimeout(updateQuickView, 2000);
     
     // activates the consecutive pulses/switches every 8 seconds
     // the 8 seconds includes the 3 seconds it takes to complete the switching animation
-    setInterval(updateQuickView, 8000); 
+    setInterval(updateQuickView, 6000); 
 });
  
 // switches between showing the daily amount and the all time amount
 var updateQuickView = function() {
-    $distanceTraveled.animate({'opacity': 0}, 1500, function() {
+    $distanceTraveled.animate({'opacity': 0}, 500, function() {
         if(showingTodayStat) {
             // switches to all time distance
             $(this).html(generateQuickViewNumber(pixels_allTimeDistance, allTimeConversions) + ' total');
@@ -88,7 +88,7 @@ var updateQuickView = function() {
             $(this).html(generateQuickViewNumber(pixels_dailyDistance, dailyConversions) + ' today');
         }
         showingTodayStat = !showingTodayStat; 
-        $(this).animate({'opacity': 1}, 1500);    
+        $(this).animate({'opacity': 1}, 500);    
     }); 
 };
 
