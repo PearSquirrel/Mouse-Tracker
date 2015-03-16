@@ -76,6 +76,20 @@ table {
   font-weight: bold;
 }
 
+.clearfix:before,
+.clearfix:after {
+   content: '\0020';
+   display: block;
+   overflow: hidden;
+   visibility: hidden;
+   width: 0;
+   height: 0;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.clear { clear: both }
+
 /*  PAPER TABS  */
     paper-tabs, core-toolbar {
       background-color: $color-primary;

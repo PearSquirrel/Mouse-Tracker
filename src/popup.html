@@ -13,7 +13,8 @@ value "popup.html".
         <link rel="import" href="bower_components/core-pages/core-pages.html">
         <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
         <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
-        <link rel="import" href="bower_components/core-animated-pages/transitions/slide-up.html">
+        <link rel="import" href="bower_components/core-animated-pages/transitions/scale-up.html">
+        <link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
         
         <script src="scripts/jquery-1.11.2.js"></script>
         <script src="scripts/popup.js"></script>
@@ -21,7 +22,7 @@ value "popup.html".
     
     <body>
         
-        <div id="wrapper">
+        <div id="wrapper" class="clearfix">
             
             <div id="header">
                 <h1>Mouse Tracker</h1>
@@ -33,9 +34,9 @@ value "popup.html".
                 <paper-tab id="allTimeTab">All-Time</paper-tab>
             </paper-tabs>
             
-            <core-animated-pages selected="0" transitions="slide-up">
+            <core-animated-pages selected="0" transitions="cross-fade">
                 <section>
-                    <div class="tab-content" id="page-1" slide-up>
+                    <div class="tab-content" id="page-1" cross-fade>
                         <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
                             <thead>
                                 <tr class="distanceTableRow">
@@ -47,7 +48,7 @@ value "popup.html".
                     </div>
                 </section>
                 <section>
-                    <div class="tab-content" id="page-2" slide-up>
+                    <div class="tab-content" id="page-2" cross-fade>
                         <table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
                             <thead>
                                 <tr class="distanceTableRow">
@@ -59,6 +60,7 @@ value "popup.html".
                     </div>
                 </section>
             </core-animated-pages>
+            <div class="clear"></div>
             
         </div>
         
