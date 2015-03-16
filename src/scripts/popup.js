@@ -40,6 +40,9 @@ $(document).ready(function() {
         pages.selected = tabs.selected;
     });
 
+    var checkboxes = document.querySelector('paper-checkbox');
+    
+
     $allTimeDistanceTable = $('#allTimeDistanceTable');
     $dailyDistanceTable = $('#dailyDistanceTable');
     
