@@ -43,6 +43,9 @@ module.exports = function(grunt) {
           src: ['src/styles/sass/style.scss'],
           dest: 'src/styles/css/style.css',
           nonull: true
+        }, {
+          src: ['src/styles/sass/style-options.scss'],
+          dest: 'src/styles/css/style-options.css'
         }]
       }
     },
@@ -54,7 +57,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/styles/style.css': 'src/styles/css/style.css'
+          'dist/styles/style.css': 'src/styles/css/style.css', 'dist/styles/style-options.css': 'src/styles/css/style-options.css'
         }
       }
     },
@@ -62,7 +65,7 @@ module.exports = function(grunt) {
     copy: {
       files: {
         cwd: 'src/',      // set working folder / root to copy
-        src: ['popup.html', 'manifest.json', 'images/**', 'bower_components/**'],        // copy all files and subfolders
+        src: ['popup.html', 'options.html', 'manifest.json', 'images/**', 'bower_components/**'],        // copy all files and subfolders
         dest: 'dist/',    // destination folder
         expand: true      // required when using cwd
       }
@@ -80,14 +83,14 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/popup.html': 'dist/popup.html'
+          'dist/popup.html': 'dist/popup.html', 'dist/options.html': 'dist/options.html'
         }
       }
     },
 
     watch: {
       options: {livereload: true},
-      files: ['src/scripts/**', 'src/styles/**', 'src/popup.html'],
+      files: ['src/scripts/**', 'src/styles/**', 'src/popup.html', 'src/options.html'],
       tasks: ['default']
     }
 

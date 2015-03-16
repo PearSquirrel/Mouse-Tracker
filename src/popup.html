@@ -34,32 +34,34 @@ value "popup.html".
                 <paper-tab id="allTimeTab">All-Time</paper-tab>
             </paper-tabs>
             
-            <core-animated-pages selected="0" transitions="cross-fade">
-                <section>
-                    <div class="tab-content" id="page-1" cross-fade>
-                        <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
-                            <thead>
-                                <tr class="distanceTableRow">
-                                    <th class="bold">Units</th>
-                                    <th>Distance</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </section>
-                <section>
-                    <div class="tab-content" id="page-2" cross-fade>
-                        <table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
-                            <thead>
-                                <tr class="distanceTableRow">
-                                    <th>Units</th>
-                                    <th>Distance</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </section>
-            </core-animated-pages>
+            <core-pages flex>
+                
+                <div class="tab-content" id="page-1">
+                    <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+                        <thead>
+                            <tr class="distanceTableRow">
+                                <th class="bold">Units</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <footer>Test footer page 1</footer>
+                    <paper-checkbox checked for></paper-checkbox>
+                </div>
+
+                <div class="tab-content" id="page-2">
+                    <table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
+                        <thead>
+                            <tr class="distanceTableRow">
+                                <th>Units</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <footer>Test footer page 2</footer>
+                </div>
+
+            </core-pages>
         </div>
         
         <div id="footer">
