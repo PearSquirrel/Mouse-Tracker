@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     copy: {
       files: {
         cwd: 'src/',      // set working folder / root to copy
-        src: ['popup.html', 'manifest.json', 'images/**', 'bower_components/**'],        // copy all files and subfolders
+        src: ['popup.html', 'options.html', 'manifest.json', 'images/**', 'bower_components/**'],        // copy all files and subfolders
         dest: 'dist/',    // destination folder
         expand: true      // required when using cwd
       }
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 
     watch: {
       options: {livereload: true},
-      files: ['src/scripts/**', 'src/styles/**', 'src/popup.html'],
+      files: ['src/scripts/**', 'src/styles/**', 'src/popup.html', 'src/options.html'],
       tasks: ['default']
     }
 
