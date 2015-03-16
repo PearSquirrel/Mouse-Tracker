@@ -76,6 +76,12 @@ table {
   font-weight: bold;
 }
 
+footer {
+  background-color: $color-primary;
+  color: $color-title-font;
+  line-height: 45px;
+}
+
 /*  PAPER TABS  */
     paper-tabs, core-toolbar {
       background-color: $color-primary;
