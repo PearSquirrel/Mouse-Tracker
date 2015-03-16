@@ -70,6 +70,9 @@ body {
 table {
   width: 100%;
   background-color: $color-content-bg;
+  col {
+    width: 50%;
+  }
 }
 
 .bold {
