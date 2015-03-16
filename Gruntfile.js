@@ -43,6 +43,9 @@ module.exports = function(grunt) {
           src: ['src/styles/sass/style.scss'],
           dest: 'src/styles/css/style.css',
           nonull: true
+        }, {
+          src: ['src/styles/sass/style-options.scss'],
+          dest: 'src/styles/css/style-options.css'
         }]
       }
     },
@@ -54,7 +57,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/styles/style.css': 'src/styles/css/style.css'
+          'dist/styles/style.css': 'src/styles/css/style.css', 'dist/styles/style-options.css': 'src/styles/css/style-options.css'
         }
       }
     },
@@ -80,7 +83,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/popup.html': 'dist/popup.html'
+          'dist/popup.html': 'dist/popup.html', 'dist/options.html': 'dist/options.html'
         }
       }
     },
