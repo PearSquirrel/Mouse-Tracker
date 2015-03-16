@@ -83,6 +83,9 @@ footer {
   background-color: $color-primary;
   color: $color-title-font;
   line-height: 45px;
+  paper-checkbox {
+    padding: 0px 12px;
+  }
 }
 
 /*  PAPER TABS  */
