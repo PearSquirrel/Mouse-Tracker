@@ -34,7 +34,7 @@ var $dailyDistanceTable;
 $(document).ready(function() {
     
     // for the tabbing effect
-    var pages = document.querySelector('core-pages');
+    var pages = document.querySelector('core-animated-pages');
     var tabs = document.querySelector('paper-tabs');
     tabs.addEventListener('core-select', function() {
         pages.selected = tabs.selected;

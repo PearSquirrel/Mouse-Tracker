@@ -11,6 +11,8 @@ value "popup.html".
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/paper-elements/paper-elements.html">
         <link rel="import" href="bower_components/core-pages/core-pages.html">
+        <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+        <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
         
         <script src="scripts/jquery-1.11.2.js"></script>
         <script src="scripts/popup.js"></script>
@@ -30,9 +32,8 @@ value "popup.html".
                 <paper-tab id="allTimeTab">All-Time</paper-tab>
             </paper-tabs>
             
-            <core-pages flex>
-                
-                <div class="tab-content" id="page-1">
+            <core-animated-pages selected="0" transitions="slide-from-right">
+                <section class="tab-content" id="page-1">
                     <table id="dailyDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
                         <thead>
                             <tr class="distanceTableRow">
@@ -41,9 +42,9 @@ value "popup.html".
                             </tr>
                         </thead>
                     </table>
-                </div>
+                </section>
 
-                <div class="tab-content" id="page-2">
+                <section class="tab-content" id="page-2">
                     <table id="allTimeDistanceTable" class="pure-table pure-table-horizontal pure-table-striped">
                         <thead>
                             <tr class="distanceTableRow">
@@ -52,9 +53,8 @@ value "popup.html".
                             </tr>
                         </thead>
                     </table>
-                </div>
-
-            </core-pages>
+                </section>
+            </core-animated-pages>
             
         </div>
         
