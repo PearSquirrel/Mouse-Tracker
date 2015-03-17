@@ -96,7 +96,7 @@ function saveDistance(newDist) {
         var opt = {
             type: "basic",
             title: "Milestone",
-            message: "You moved " + nextMilestone + " pixels!!!",
+            message: "You moved " + Number(nextMilestone).toLocaleString('en') + " pixels!",
             iconUrl: chrome.runtime.getURL('../images/icon.png')
         };
 	 
