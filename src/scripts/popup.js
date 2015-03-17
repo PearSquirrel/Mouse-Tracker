@@ -41,14 +41,14 @@ $(document).ready(function() {
 
     var checkbox = document.querySelector('paper-checkbox#showNotifications');
     console.log("show notifications: " + localStorage.showNotifications);
-    if (!localStorage.showNotifications) {
+    if (!localStorage.showNotifications || !bgPage.showNotifications) {
         $('paper-checkbox#showNotifications').removeAttr('checked');
         $('paper-checkbox#showNotifications').attr('aria-checked','false');
     }
     checkbox.addEventListener('core-change', function() {
         bgPage.showNotifications = $('paper-checkbox#showNotifications').is("[checked]");
         localStorage.setItem('showNotifications', bgPage.showNotifications);
-        console.log("show notifications: " + bgPage.showNotifications + localStorage.showNotifications);
+        console.log("show notifications: " + bgPage.showNotifications + " local: " + localStorage.showNotifications);
     });    
 
     $allTimeDistanceTable = $('#allTimeDistanceTable');
