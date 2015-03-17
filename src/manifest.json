@@ -4,7 +4,6 @@
     "name": "Mouse Tracker",
     "description": "Tracking your mouse's movement",
     "version": "1.0",
-    "options_page": "options.html",
 
     "browser_action": {
         "default_icon": "images/icon.png",
