@@ -1,4 +1,4 @@
-var showNotifications = true;
+var showNotifications = loadShowNotifications();
 
 // constants for local storage
 var ALL_TIME_DISTANCE = "allTimeDistance";
@@ -43,6 +43,11 @@ function loadDailyDistance() {
 function  loadMinutelyDistance() {
     var dist = parseInt(localStorage[currentMinutes]) || 0;
     return dist;
+}
+
+function loadShowNotifications() {
+    var show = localStorage.showNotifications || true;
+    return show;
 }
 
 // returns a string for the current date in the format: yyyy/mm/dd
@@ -119,7 +124,7 @@ chrome.runtime.onMessage.addListener(
             // calculates new distance using the pythagorean theorem/distance formula
             var newDist = Math.floor(Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2)));
             saveDistance(newDist);
-            
+
             sendResponse({farewell: "success"});
         }
 });

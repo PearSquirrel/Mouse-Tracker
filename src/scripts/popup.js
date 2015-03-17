@@ -32,7 +32,6 @@ var $allTimeDistanceTable;
 var $dailyDistanceTable;
 
 $(document).ready(function() {
-    
     // for the tabbing effect
     var pages = document.querySelector('core-animated-pages');
     var tabs = document.querySelector('paper-tabs');
@@ -40,8 +39,17 @@ $(document).ready(function() {
         pages.selected = tabs.selected;
     });
 
-    var checkboxes = document.querySelector('paper-checkbox');
-    
+    var checkbox = document.querySelector('paper-checkbox#showNotifications');
+    console.log("show notifications: " + localStorage.showNotifications);
+    if (!localStorage.showNotifications || !bgPage.showNotifications) {
+        $('paper-checkbox#showNotifications').removeAttr('checked');
+        $('paper-checkbox#showNotifications').attr('aria-checked','false');
+    }
+    checkbox.addEventListener('core-change', function() {
+        bgPage.showNotifications = $('paper-checkbox#showNotifications').is("[checked]");
+        localStorage.setItem('showNotifications', bgPage.showNotifications);
+        console.log("show notifications: " + bgPage.showNotifications + " local: " + localStorage.showNotifications);
+    });    
 
     $allTimeDistanceTable = $('#allTimeDistanceTable');
     $dailyDistanceTable = $('#dailyDistanceTable');
