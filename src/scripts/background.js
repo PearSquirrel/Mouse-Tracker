@@ -45,7 +45,7 @@ function  loadMinutelyDistance() {
     return dist;
 }
 
-function loadShowNotificatoins() {
+function loadShowNotifications() {
     var show = localStorage.showNotifications || true;
     return show;
 }
