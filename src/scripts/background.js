@@ -25,7 +25,7 @@ var oldY = 0;
 var notificationID = 0;
 
 // next notification milestone in miles
-var nextMilestone = allTimeDistance + 10000;
+var nextMilestone = 100000;
 
 // returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
@@ -105,7 +105,7 @@ function saveDistance(newDist) {
         });
 
         notificationID += 1;
-        nextMilestone += 10000;
+        nextMilestone += 100000;
     }
 }
 
