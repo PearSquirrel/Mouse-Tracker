@@ -1,6 +1,8 @@
 # Mouse-Tracker
 Google Chrome Extension to track how much you use the internet
 
+Download from the [Chrome Web Store](https://chrome.google.com/webstore/detail/wheres-the-cheese/imgocdfblfikpclhdddnnpcogmndegog)
+
 To get started:
 
 1. Go to the root of the project
