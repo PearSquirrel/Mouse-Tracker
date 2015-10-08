@@ -94,7 +94,7 @@ function saveDistance(newDist) {
         };
 	 
         chrome.notifications.create('notify' + notificationID, opt, function(id) {
-            console.log('displayed notification ' + id);
+            //console.log('displayed notification ' + id);
         });
 
         notificationID += 1;

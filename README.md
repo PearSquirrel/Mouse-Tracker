@@ -9,6 +9,8 @@ To get started:
 
 3. npm install
 
+4. if sass isn't already installed: sudo gem install sass
+
 To compile from source to distribuion:
 
 1. Go anywhere within the project (including the root)
