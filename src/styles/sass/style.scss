@@ -12,6 +12,7 @@ body {
   background-color: #EAEAEA;
   background-image: linear-gradient(top, $color-header-bg-primary, $color-header-bg-secondary 0%);
   background-image: -webkit-linear-gradient(top , $color-header-bg-primary 102px, $color-header-bg-secondary 0%);
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
@@ -31,7 +32,6 @@ body {
   width: 360px;
   background-color: $color-content-bg;
   color: $color-content-font;
-  padding-bottom: 191px;
   margin: 0 20px;
   margin-top: 20px;
 
@@ -69,10 +69,23 @@ body {
 
 table {
   width: 100%;
+  background-color: $color-content-bg;
+  col {
+    width: 50%;
+  }
 }
 
 .bold {
   font-weight: bold;
+}
+
+footer {
+  background-color: $color-primary;
+  color: $color-title-font;
+  line-height: 45px;
+  paper-checkbox {
+    padding: 0px 12px;
+  }
 }
 
 /*  PAPER TABS  */
@@ -80,6 +93,11 @@ table {
       background-color: $color-primary;
       color: #fff;
       box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    paper-checkbox.blue::shadow #checkbox.checked {
+      background-color: $color-accent;
+      border-color: $color-accent;
     }
     
     

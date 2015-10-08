@@ -1,3 +1,5 @@
+var showNotifications = loadShowNotifications();
+
 // constants for local storage
 var ALL_TIME_DISTANCE = "allTimeDistance";
 
@@ -23,7 +25,7 @@ var oldY = 0;
 var notificationID = 0;
 
 // next notification milestone in miles
-var nextMilestone = allTimeDistance + 10000;
+var nextMilestone = 100000;
 
 // returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
@@ -41,6 +43,11 @@ function loadDailyDistance() {
 function  loadMinutelyDistance() {
     var dist = parseInt(localStorage[currentMinutes]) || 0;
     return dist;
+}
+
+function loadShowNotifications() {
+    var show = localStorage.showNotifications || true;
+    return show;
 }
 
 // returns a string for the current date in the format: yyyy/mm/dd
@@ -84,12 +91,12 @@ function saveDistance(newDist) {
     minutelyDistance = loadMinutelyDistance() + newDist;
     localStorage[currentMinutes] = minutelyDistance;
     
-    if(allTimeDistance > nextMilestone) {
+    if(allTimeDistance > nextMilestone && showNotifications) {
         // send notification
         var opt = {
             type: "basic",
             title: "Milestone",
-            message: "You moved " + nextMilestone + " pixels!!!",
+            message: "You moved " + Number(nextMilestone).toLocaleString('en') + " pixels!",
             iconUrl: chrome.runtime.getURL('../images/icon.png')
         };
 	 
@@ -98,7 +105,7 @@ function saveDistance(newDist) {
         });
 
         notificationID += 1;
-        nextMilestone += 10000;
+        nextMilestone += 100000;
     }
 }
 
@@ -117,7 +124,7 @@ chrome.runtime.onMessage.addListener(
             // calculates new distance using the pythagorean theorem/distance formula
             var newDist = Math.floor(Math.sqrt(Math.pow(xDifference,2) + Math.pow(yDifference,2)));
             saveDistance(newDist);
-            
+
             sendResponse({farewell: "success"});
         }
 });
