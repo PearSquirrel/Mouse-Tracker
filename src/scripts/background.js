@@ -25,7 +25,7 @@ var oldY = 0;
 var notificationID = 0;
 
 // next notification milestone in miles
-var nextMilestone = 100000;
+var nextMilestone = loadNextMilestone();
 
 // returns the all-time distance variable that is stored in local storage
 function loadAllTimeDistance() {
@@ -47,6 +47,11 @@ function  loadMinutelyDistance() {
 
 function loadShowNotifications() {
     var show = localStorage.showNotifications || true;
+    return show;
+}
+
+function loadNextMilestone() {
+    var show = localStorage.nextMilestone || 100000;
     return show;
 }
 
@@ -107,6 +112,7 @@ function saveDistance(newDist) {
         notificationID += 1;
         nextMilestone += 100000;
     }
+    localStorage[nextMilestone] = nextMilestone;
 }
 
 // listens for messages from page_script.js containing the latest coordinates for the mouse (Go MouseRat!)
