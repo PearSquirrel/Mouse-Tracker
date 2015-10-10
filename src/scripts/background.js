@@ -96,18 +96,20 @@ function saveDistance(newDist) {
     minutelyDistance = loadMinutelyDistance() + newDist;
     localStorage[currentMinutes] = minutelyDistance;
     
-    if(allTimeDistance > nextMilestone && showNotifications) {
-        // send notification
-        var opt = {
-            type: "basic",
-            title: "Milestone",
-            message: "You moved " + Number(nextMilestone).toLocaleString('en') + " pixels!",
-            iconUrl: chrome.runtime.getURL('../images/icon.png')
-        };
-	 
-        chrome.notifications.create('notify' + notificationID, opt, function(id) {
-            //console.log('displayed notification ' + id);
-        });
+    if(allTimeDistance > nextMilestone) {
+        if (showNotifications) {
+            // send notification
+            var opt = {
+                type: "basic",
+                title: "Milestone",
+                message: "You moved " + Number(nextMilestone).toLocaleString('en') + " pixels!",
+                iconUrl: chrome.runtime.getURL('../images/icon.png')
+            };
+         
+            chrome.notifications.create('notify' + notificationID, opt, function(id) {
+                //console.log('displayed notification ' + id);
+            });
+        }
 
         notificationID += 1;
         nextMilestone += 100000;
