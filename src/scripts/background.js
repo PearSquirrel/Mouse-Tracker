@@ -97,7 +97,8 @@ function saveDistance(newDist) {
     localStorage[currentMinutes] = minutelyDistance;
     
     if(allTimeDistance > nextMilestone) {
-        if (showNotifications) {
+         // only show 10 notifications if someone decides to re-enable after travelling far
+        if (showNotifications && (allTimeDistance - nextMilestone) <= 1000000) {
             // send notification
             var opt = {
                 type: "basic",
