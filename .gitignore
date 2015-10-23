@@ -5,3 +5,4 @@ dist
 dist.*
 src/styles/css
 src/styles/*.css
+.brackets.json
