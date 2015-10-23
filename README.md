@@ -9,7 +9,7 @@ Have you ever wondered how far your computer mouse has traveled over the years? 
 Where's the Cheese? is an extension for tracking the distance your mouse has travelled.  It currently keeps track of daily and cumulative movement, and even gives you progress updates along the way.  If you share even an ounce of empathy for your poor little mouse it would be a sin not to download this.  Do it for Jeremy.
 
 
-##For Developers
+## For Developers
 To get started:
 
 1. Go to the root of the project
@@ -18,7 +18,7 @@ To get started:
 
 3. `npm install`
 
-4. if sass isn't already installed: sudo gem install sass
+4. if SaSS isn't already installed: `sudo gem install sass`
 
 To compile from source to distribuion:
 
